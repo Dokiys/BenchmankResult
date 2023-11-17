@@ -48,12 +48,14 @@ func (hbr Result) String() string {
 func baseString(val float64, base string) string {
 	return fmt.Sprintf("%.3f %s", val, base)
 }
+
 func humanReadBytes(s uint64) (float64, string) {
 	sizes := []string{"B", "KB", "MB", "GB", "TB", "PB", "EB"}
 	bases := []float64{1000, 1000, 1000, 1000, 1000, 1000}
 
 	return humanRead(s, bases, sizes)
 }
+
 func humanReadTime(s uint64) (float64, string) {
 	sizes := []string{"ns", "µs", "ms", " s", " m", " h", " day"}
 	bases := []float64{1000, 1000, 1000, 60, 60, 24}
